@@ -26,4 +26,18 @@ def primes_less_than(n):
 			all_primes.append(p)
 	return all_primes
 
-print("All primes less than 1,000:\n"+str(primes_less_than(1000)))
+print("All primes less than 100:\n"+str(primes_less_than(100)))
+
+def calculate_N(p,q):
+	n_up = p*q
+	return n_up
+
+def calculate_T(p,q):
+	t_up = (p-1)*(q-1)
+	return t_up
+
+
+print(is_coprime(11,47))
+print(gcd(3,87))
+
+
