@@ -58,8 +58,26 @@ def encrypt_message(n, e, message):
 
 def decrypt(n,d,enc):
 	dec = (enc**d) % n
+	return chr(dec)
+
+def decrypt_message(n,d,list):
+	dec_message = ""
+	for num in list:
+		dec_message += decrypt(n,d,num)
+	return dec_message
 	
 
+p = 61
+q = 89
 
+n = calculate_N(p,q)
+t = calculate_T(p,q)
+e,d = pick_e_d(p,q)
+
+print(n)
+print(e)
+
+decrypting = decrypt_message(n,d,[5225, 3160, 4092, 153, 3160, 80, 664, 4543, 4734, 153, 4092, 4413, 4543, 4377, 4543, 2079, 139, 3160, 1062, 4413, 3129, 4543, 11, 2894, 4543, 2109, 11, 4279, 4413, 1980, 2418, 4543, 4048, 153, 3595, 4028, 664, 4543, 153, 80, 4543, 664, 4028, 4413, 4543, 4092, 3160, 1980, 3272, 80, 4413, 3129, 3129, 2418, 2079])
+print(decrypting)
 
 
