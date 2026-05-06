@@ -36,8 +36,30 @@ def calculate_T(p,q):
 	t_up = (p-1)*(q-1)
 	return t_up
 
+def pick_e_d(p,q):
+	T = calculate_T(p,q)
+	for e in range(2, T):
+		if is_coprime(e, T):
+			break
+	for d in range(2, T):
+		if (e*d) % T == 1:
+			return e, d
+		
+def encrypt(n,e,letter):
+	v = ord(letter)
+	enc = (v**e) % n
+	return enc
 
-print(is_coprime(11,47))
-print(gcd(3,87))
+def encrypt_message(n, e, message):
+	enc_message = []
+	for letter in message:
+		enc_message.append(encrypt(n,e,letter))
+	return enc_message
+
+def decrypt(n,d,enc):
+	dec = (enc**d) % n
+	
+
+
 
 
